@@ -14,8 +14,8 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@master
       - name: PHP
-        uses: bruceCzK/gh-action-php@5.6
+        uses: bruceCzK/gh-action-php@master
       - name: Run
         run: |
           if [ '${{ secrets.BDUSS }}' != '' ]; then sed -i "s/xxxxx/${{ secrets.BDUSS }}/" tieba.php; fi
-          php tieba.php
+          php5.6 tieba.php
