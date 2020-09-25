@@ -9,12 +9,10 @@ on:
 jobs:
   run-it:
     runs-on: ubuntu-latest
-    name: Run it on action
+    name: Tieba Checkin
     steps:
       - name: Checkout master
         uses: actions/checkout@master
-      - name: PHP
-        uses: bruceCzK/gh-action-php@master
       - name: Run
         run: |
           if [ '${{ secrets.BDUSS }}' != '' ]; then sed -i "s/xxxxx/${{ secrets.BDUSS }}/" tieba.php; fi
